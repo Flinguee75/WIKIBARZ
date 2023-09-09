@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "893721094149",
+    "project_id": "conspirapcy-8d635",
+    "storage_bucket": "conspirapcy-8d635.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893721094149:android:c9f82d4d10db78379b546c",
+        "android_client_info": {
+          "package_name": "com.example.conspirapcy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893721094149-9rle6n8b12opvgji7f7aov7chpcphsa5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVWJZBc6WHH4lu1ZsE8mcKoYf08f9LadM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893721094149-9rle6n8b12opvgji7f7aov7chpcphsa5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
