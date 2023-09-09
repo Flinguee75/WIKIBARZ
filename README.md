@@ -1,6 +1,8 @@
 # conspirapcy
 
-Pour faire un truc stylé
+A social network for sharing content between rap fans
+
+There are still features to import 
 
 ## Getting Started
 
