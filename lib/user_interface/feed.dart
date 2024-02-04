@@ -32,7 +32,6 @@ class _user_pageState extends State<user_page> {
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ),
-        automaticallyImplyLeading: false,
         title: Image.asset(
           'images/titre.png',
           height: 30,
