@@ -14,7 +14,7 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(0, 16, 15, 15),
+      backgroundColor: Color.fromARGB(255, 108, 108, 108),
       body: Container(
         margin: const EdgeInsets.symmetric(
           vertical: 60,
@@ -36,7 +36,7 @@ class _WelcomePageState extends State<WelcomePage> {
             Delayed_animation(
               delay: 1500,
               child: Image.asset(
-                'images/alpha.jpeg',
+                'images/test1.jpeg',
               ),
             ),
             const SizedBox(
@@ -58,6 +58,7 @@ class _WelcomePageState extends State<WelcomePage> {
               height: 50,
             ),
             Delayed_animation(
+              delay: 2500,
               child: SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
@@ -69,6 +70,11 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                     );
                   },
+                  style: OutlinedButton.styleFrom(
+                    side: const BorderSide(color: Colors.white),
+                    shape: const StadiumBorder(),
+                    padding: const EdgeInsets.all(13),
+                  ),
                   child: Text(
                     'Viens Découvrir des Barz',
                     style: GoogleFonts.poppins(
@@ -77,14 +83,8 @@ class _WelcomePageState extends State<WelcomePage> {
                       fontSize: 16,
                     ),
                   ),
-                  style: OutlinedButton.styleFrom(
-                    side: const BorderSide(color: Colors.white),
-                    shape: const StadiumBorder(),
-                    padding: const EdgeInsets.all(13),
-                  ),
                 ),
               ),
-              delay: 2500,
             ),
           ],
         ),
