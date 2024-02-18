@@ -1,7 +1,11 @@
-import 'package:conspirapcy/welcome_pages/welcome_2.dart';
-import '../animation/Delayed_animation.dart';
+import 'package:conspirapcy/animation/Fade_Animation.dart';
+import 'package:conspirapcy/elements/CircleBox.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:video_player/video_player.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -11,83 +15,100 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  late VideoPlayerController _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.asset('images/grunt.mp4')
+      ..initialize().then((_) {
+        _controller.play();
+        _controller.setLooping(true);
+        // Ensure the first frame is shown after the video is initialized
+        setState(() {});
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 108, 108, 108),
-      body: Container(
-        margin: const EdgeInsets.symmetric(
-          vertical: 60,
-          horizontal: 30,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Delayed_animation(
-              delay: 1000,
-              child: Image.asset(
-                'images/titre.png',
-                height: 50,
-              ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            Delayed_animation(
-              delay: 1500,
-              child: Image.asset(
-                'images/test1.jpeg',
-              ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Delayed_animation(
-              delay: 2000,
-              child: Text(
-                "Decouvrez les meilleurs freestyles ici, \n (Image à modifier)",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w300,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Delayed_animation(
-              delay: 2500,
+      body: Stack(
+        children: <Widget>[
+          SizedBox.expand(
+            child: FittedBox(
+              fit: BoxFit.cover,
               child: SizedBox(
-                width: double.infinity,
-                child: OutlinedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const connexion(),
-                      ),
-                    );
-                  },
-                  style: OutlinedButton.styleFrom(
-                    side: const BorderSide(color: Colors.white),
-                    shape: const StadiumBorder(),
-                    padding: const EdgeInsets.all(13),
+                width: _controller.value.size.width ?? 0,
+                height: _controller.value.size.height ?? 0,
+                child: VideoPlayer(_controller),
+              ),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(
+              vertical: 70,
+            ),
+            child: Column(
+              children: [
+                Container(
+                  alignment: Alignment.topRight,
+                  child: fadeIn_fadeOut(
+                    image: Image.asset(
+                      'images/titre.png',
+                      width: 300,
+                    ),
+                    delay: 2,
                   ),
+                ),
+                const SizedBox(height: 50),
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: CircleBox(
+                    height: 300,
+                    width: 200,
+                    widget: Image.asset('images/logo1.png'),
+                  ),
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  alignment: FractionalOffset.bottomRight,
                   child: Text(
-                    'Viens Découvrir des Barz',
-                    style: GoogleFonts.poppins(
+                    'Viens Découvrir de nouvelle choses',
+                    style: GoogleFonts.ubuntu(
                       color: Colors.white,
                       fontWeight: FontWeight.w300,
-                      fontSize: 16,
+                      fontSize: 20,
                     ),
                   ),
                 ),
-              ),
+                const SizedBox(
+                  height: 60,
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    style: OutlinedButton.styleFrom(
+                      shape: const StadiumBorder(),
+                      foregroundColor: Colors.white,
+                      backgroundColor: Color.fromARGB(255, 64, 105, 175),
+                      padding: const EdgeInsets.all(13),
+                    ),
+                    child: Text(
+                      "Connecte-toi ici frérot",
+                      style: GoogleFonts.ubuntu(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

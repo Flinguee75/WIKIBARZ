@@ -39,7 +39,8 @@ dependencies:
   google_fonts: ^4.0.5
   font_awesome_flutter: ^9.1.0
   firebase_auth: ^4.6.2
-
+  video_player: ^2.8.2
+  animator: ^3.3.0
   firebase_core: ^2.15.0
   cloud_firestore: ^4.8.4
   firebase_storage: ^11.2.5

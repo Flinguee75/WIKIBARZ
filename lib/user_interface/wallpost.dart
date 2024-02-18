@@ -4,13 +4,13 @@ class WallPost extends StatelessWidget {
   final String username;
   final String barz;
   final String imagepath;
-  final String image;
-  const WallPost(
-      {super.key,
-      required this.username,
-      required this.barz,
-      required this.imagepath,
-      required this.image});
+
+  const WallPost({
+    super.key,
+    required this.username,
+    required this.barz,
+    required this.imagepath,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +62,6 @@ class WallPost extends StatelessWidget {
             margin: const EdgeInsets.all(10),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(
-                image,
-              ),
             ),
           )),
         ],
