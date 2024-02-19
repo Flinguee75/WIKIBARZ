@@ -136,7 +136,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             style: OutlinedButton.styleFrom(
                               shape: const StadiumBorder(),
                               backgroundColor:
-                                  Color.fromARGB(255, 171, 170, 170),
+                                  const Color.fromARGB(255, 171, 170, 170),
                               padding: const EdgeInsets.all(13),
                             ),
                             child: Text(
