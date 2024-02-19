@@ -90,10 +90,10 @@ class _user_pageState extends State<user_page> {
                       final post = snapshot.data!.docs[index];
 
                       return WallPost(
-                          username: post['pseudo'],
-                          barz: post['barz'],
-                          imagepath: post['photo_profile'],
-                          image: post['image']);
+                        username: post['pseudo'],
+                        barz: post['barz'],
+                        imagepath: post['photo_profile'],
+                      );
                     },
                   );
                 } else if (snapshot.hasError) {
