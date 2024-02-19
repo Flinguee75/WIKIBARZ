@@ -1,9 +1,6 @@
 import 'package:conspirapcy/animation/Fade_Animation.dart';
 import 'package:conspirapcy/elements/CircleBox.dart';
-import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 
