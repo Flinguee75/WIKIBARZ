@@ -62,83 +62,96 @@ class _WelcomePageState extends State<WelcomePage> {
                 const SizedBox(height: 50),
                 Container(
                   alignment: Alignment.topLeft,
-                  child: CircleBox(
-                    height: 300,
-                    width: 200,
-                    widget: Image.asset('images/logo1.png'),
-                  ),
+                  child: fadeIn_fadeOut(
+                      image: CircleBox(
+                        height: 300,
+                        width: 200,
+                        widget: Image.asset('images/logo1.png'),
+                      ),
+                      delay: 3),
                 ),
                 const SizedBox(
                   height: 50,
                 ),
                 Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    alignment: FractionalOffset.bottomRight,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                  margin: const EdgeInsets.only(right: 10),
+                  alignment: FractionalOffset.bottomRight,
+                  child: fadeIn_fadeOut(
+                      image: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Viens découvrir de nouvelle choses',
+                            style: GoogleFonts.ubuntu(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w300,
+                              fontSize: 20,
+                            ),
+                          ),
+                          Text(
+                            'Tous les freestyles sont réunis ici',
+                            style: GoogleFonts.ubuntu(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w300,
+                              fontSize: 20,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                        ],
+                      ),
+                      delay: 3),
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                fadeIn_fadeOut(
+                    image: Column(
                       children: [
-                        Text(
-                          'Viens découvrir de nouvelle choses',
-                          style: GoogleFonts.ubuntu(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w300,
-                            fontSize: 20,
+                        Container(
+                          margin: EdgeInsets.symmetric(vertical: 10),
+                          width: double.infinity,
+                          child: OutlinedButton(
+                            onPressed: () {},
+                            style: OutlinedButton.styleFrom(
+                              shape: const StadiumBorder(),
+                              foregroundColor: Colors.white,
+                              backgroundColor:
+                                  const Color.fromARGB(255, 64, 105, 175),
+                              padding: const EdgeInsets.all(13),
+                            ),
+                            child: Text(
+                              "Connecte-toi ici ",
+                              style: GoogleFonts.ubuntu(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 20,
+                              ),
+                            ),
                           ),
                         ),
-                        Text(
-                          'Tous les styles sont réunis ici',
-                          style: GoogleFonts.ubuntu(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w300,
-                            fontSize: 20,
+                        SizedBox(
+                          width: double.infinity,
+                          child: OutlinedButton(
+                            onPressed: () {},
+                            style: OutlinedButton.styleFrom(
+                              shape: const StadiumBorder(),
+                              backgroundColor:
+                                  Color.fromARGB(255, 171, 170, 170),
+                              padding: const EdgeInsets.all(13),
+                            ),
+                            child: Text(
+                              "Inscription",
+                              style: GoogleFonts.ubuntu(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 20,
+                              ),
+                            ),
                           ),
-                          textAlign: TextAlign.left,
                         ),
                       ],
-                    )),
-                const SizedBox(
-                  height: 50,
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 10),
-                  width: double.infinity,
-                  child: OutlinedButton(
-                    onPressed: () {},
-                    style: OutlinedButton.styleFrom(
-                      shape: const StadiumBorder(),
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color.fromARGB(255, 64, 105, 175),
-                      padding: const EdgeInsets.all(13),
                     ),
-                    child: Text(
-                      "Connecte-toi ici frérot",
-                      style: GoogleFonts.ubuntu(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton(
-                    onPressed: () {},
-                    style: OutlinedButton.styleFrom(
-                      shape: const StadiumBorder(),
-                      backgroundColor: Color.fromARGB(255, 171, 170, 170),
-                      padding: const EdgeInsets.all(13),
-                    ),
-                    child: Text(
-                      "Inscription",
-                      style: GoogleFonts.ubuntu(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                ),
+                    delay: 4)
               ],
             ),
           ),
