@@ -108,7 +108,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     image: Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.symmetric(vertical: 10),
+                          margin: const EdgeInsets.symmetric(vertical: 10),
                           width: double.infinity,
                           child: OutlinedButton(
                             onPressed: () {},
