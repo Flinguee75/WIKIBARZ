@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, use_build_context_synchronously
 
+import 'package:conspirapcy/animation/FadeLoop.dart';
 import 'package:conspirapcy/elements/Button.dart';
 import 'package:conspirapcy/elements/text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -47,7 +48,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 30, 51, 88),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white.withOpacity(0),
@@ -138,7 +139,10 @@ class _SignUpState extends State<SignUp> {
                     top: 20,
                   ),
                   height: 80,
-                  child: Image.asset('images/WIKIGRAFFITY.png'),
+                  child: FadeTransitionExample(
+                    color: const Color.fromARGB(255, 30, 51, 88),
+                    image: Image.asset("images/WIKIGRAFFITY.png"),
+                  ),
                 ),
               ],
             ),

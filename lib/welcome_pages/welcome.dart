@@ -1,4 +1,5 @@
 import 'package:conspirapcy/animation/Fade_Animation.dart';
+import 'package:conspirapcy/authentification/login_or_register_page.dart';
 import 'package:conspirapcy/elements/CircleBox.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -102,7 +103,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       delay: 3),
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 fadeIn_fadeOut(
                     image: Column(
@@ -111,7 +112,14 @@ class _WelcomePageState extends State<WelcomePage> {
                           margin: const EdgeInsets.symmetric(vertical: 10),
                           width: double.infinity,
                           child: OutlinedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const change_page(),
+                                ),
+                              );
+                            },
                             style: OutlinedButton.styleFrom(
                               shape: const StadiumBorder(),
                               foregroundColor: Colors.white,

@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 /// Flutter code sample for [FadeTransition].
 
 class FadeTransitionExample extends StatefulWidget {
-  const FadeTransitionExample({super.key});
+  final Color color;
+  final Image image;
+  const FadeTransitionExample(
+      {super.key, required this.color, required this.image});
 
   @override
   State<FadeTransitionExample> createState() => _FadeTransitionExampleState();
@@ -33,12 +36,12 @@ class _FadeTransitionExampleState extends State<FadeTransitionExample>
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: Colors.black,
+      color: widget.color,
       child: FadeTransition(
         opacity: _animation,
         child: Padding(
           padding: const EdgeInsets.all(8),
-          child: Image.asset("images/titre2.png"),
+          child: widget.image,
 
           ///Mettre Titre1 ou Titre2
         ),
