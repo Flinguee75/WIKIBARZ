@@ -141,7 +141,7 @@ class _SignUpState extends State<SignUp> {
                   height: 80,
                   child: FadeTransitionExample(
                     color: const Color.fromARGB(255, 30, 51, 88),
-                    image: Image.asset("images/WIKIGRAFFITY.png"),
+                    image: Image.asset("images/titre2.png"),
                   ),
                 ),
               ],

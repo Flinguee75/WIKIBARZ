@@ -124,7 +124,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               shape: const StadiumBorder(),
                               foregroundColor: Colors.white,
                               backgroundColor:
-                                  const Color.fromARGB(255, 64, 105, 175),
+                                  const Color.fromARGB(255, 30, 51, 88),
                               padding: const EdgeInsets.all(13),
                             ),
                             child: Text(
