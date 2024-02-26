@@ -113,12 +113,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           width: double.infinity,
                           child: OutlinedButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const change_page(),
-                                ),
-                              );
+                              Navigator.push(context, PageTrans);
                             },
                             style: OutlinedButton.styleFrom(
                               shape: const StadiumBorder(),
