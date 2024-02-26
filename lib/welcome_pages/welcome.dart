@@ -2,8 +2,9 @@ import 'package:conspirapcy/animation/Fade_Animation.dart';
 import 'package:conspirapcy/authentification/login_or_register_page.dart';
 import 'package:conspirapcy/elements/CircleBox.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:video_player/video_player.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -85,7 +86,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             'Viens découvrir de nouvelle choses',
                             style: GoogleFonts.ubuntu(
                               color: Colors.white,
-                              fontWeight: FontWeight.w300,
+                              fontWeight: FontWeight.w500,
                               fontSize: 20,
                             ),
                           ),
@@ -93,7 +94,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             'Tous les freestyles sont réunis ici',
                             style: GoogleFonts.ubuntu(
                               color: Colors.white,
-                              fontWeight: FontWeight.w300,
+                              fontWeight: FontWeight.w500,
                               fontSize: 20,
                             ),
                             textAlign: TextAlign.left,
@@ -113,7 +114,14 @@ class _WelcomePageState extends State<WelcomePage> {
                           width: double.infinity,
                           child: OutlinedButton(
                             onPressed: () {
-                              Navigator.push(context, PageTrans);
+                              Navigator.push(
+                                context,
+                                PageTransition(
+                                  child: const change_page(),
+                                  type: PageTransitionType.fade,
+                                  duration: const Duration(milliseconds: 500),
+                                ),
+                              );
                             },
                             style: OutlinedButton.styleFrom(
                               shape: const StadiumBorder(),

@@ -1,5 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, use_build_context_synchronously
 
+import 'dart:ui';
+
 import 'package:conspirapcy/animation/FadeLoop.dart';
 import 'package:conspirapcy/elements/Button.dart';
 import 'package:conspirapcy/elements/text_field.dart';
@@ -48,7 +50,6 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 30, 51, 88),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white.withOpacity(0),
