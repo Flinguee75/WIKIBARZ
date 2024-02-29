@@ -4,6 +4,7 @@ import 'package:conspirapcy/animation/FadeLoop.dart';
 import 'package:conspirapcy/elements/Button.dart';
 import 'package:conspirapcy/elements/text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -151,8 +152,7 @@ class _SignUpState extends State<SignUp> {
                 ],
               ),
             ),
-            Positioned(
-              bottom: 0,
+            SafeArea(
               child: WaveWidget(
                 config: CustomConfig(
                   durations: [
@@ -164,8 +164,10 @@ class _SignUpState extends State<SignUp> {
                     0.66,
                   ],
                   gradients: [
-                    [Colors.black, Colors.grey],
-                    [Colors.black, Colors.grey],
+                    [
+                      Colors.black,
+                      Colors.grey,
+                    ],
                   ],
                   gradientBegin: Alignment.centerLeft,
                   gradientEnd: Alignment.centerRight,
