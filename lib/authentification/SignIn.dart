@@ -5,6 +5,7 @@ import 'package:conspirapcy/elements/Button.dart';
 import 'package:conspirapcy/elements/text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wave/wave.dart';
 import 'package:wave/config.dart';
@@ -67,86 +68,116 @@ class _SignUpState extends State<SignUp> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.symmetric(
-            vertical: 40,
-            horizontal: 30,
-          ),
-          child: Column(
-            children: [
-              Text(
-                "CONNEXION",
-                style: GoogleFonts.poppins(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w300,
-                  fontSize: 30,
-                ),
-                textAlign: TextAlign.center,
+        child: Stack(
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(
+                vertical: 40,
+                horizontal: 30,
               ),
-              const SizedBox(
-                height: 65,
-              ),
-              MyTextField(
-                controller: emailTextController,
-                hintText: 'Email',
-                obsureText: false,
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              MyTextField(
-                controller: passwordTextController,
-                hintText: 'Password',
-                obsureText: true,
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              MyButton(
-                onTap: () {
-                  SignIn();
-                },
-                text: 'CONNEXION',
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Column(
                 children: [
                   Text(
-                    "T'as pas encore de compte frérot ? ",
+                    "CONNEXION",
                     style: GoogleFonts.poppins(
-                      color: Colors.white54,
-                      fontWeight: FontWeight.w200,
-                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 30,
                     ),
+                    textAlign: TextAlign.center,
                   ),
-                  GestureDetector(
-                    onTap: widget.toggle_function,
-                    child: Text(
-                      " Clique Ici",
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14,
+                  const SizedBox(
+                    height: 65,
+                  ),
+                  MyTextField(
+                    controller: emailTextController,
+                    hintText: 'Email',
+                    obsureText: false,
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  MyTextField(
+                    controller: passwordTextController,
+                    hintText: 'Password',
+                    obsureText: true,
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  MyButton(
+                    onTap: () {
+                      SignIn();
+                    },
+                    text: 'CONNEXION',
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "T'as pas encore de compte frérot ? ",
+                        style: GoogleFonts.poppins(
+                          color: Colors.white54,
+                          fontWeight: FontWeight.w200,
+                          fontSize: 14,
+                        ),
                       ),
+                      GestureDetector(
+                        onTap: widget.toggle_function,
+                        child: Text(
+                          " Clique Ici",
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      top: 20,
+                    ),
+                    height: 80,
+                    child: FadeTransitionExample(
+                      color: const Color.fromARGB(255, 30, 51, 88),
+                      image: Image.asset("images/titre2.png"),
                     ),
                   ),
                 ],
               ),
-              Container(
-                margin: const EdgeInsets.only(
-                  top: 20,
+            ),
+            Positioned(
+              bottom: 0,
+              child: WaveWidget(
+                config: CustomConfig(
+                  durations: [
+                    5000,
+                    4000,
+                  ],
+                  heightPercentages: [
+                    0.65,
+                    0.66,
+                  ],
+                  gradients: [
+                    [Colors.black, Colors.grey],
+                    [Colors.black, Colors.grey],
+                  ],
+                  gradientBegin: Alignment.centerLeft,
+                  gradientEnd: Alignment.centerRight,
+                  blur: const MaskFilter.blur(
+                    BlurStyle.solid,
+                    40,
+                  ),
                 ),
-                height: 80,
-                child: FadeTransitionExample(
-                  color: const Color.fromARGB(255, 30, 51, 88),
-                  image: Image.asset("images/titre2.png"),
-                ),
+                size: const Size(500, 500),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
