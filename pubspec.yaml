@@ -45,6 +45,8 @@ dependencies:
   cloud_firestore: ^4.8.4
   firebase_storage: ^11.2.5
   page_transition: ^2.1.0
+  rive: ^0.12.4
+  wave: ^0.2.2
 
 dev_dependencies:
   flutter_test:

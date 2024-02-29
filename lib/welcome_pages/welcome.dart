@@ -22,7 +22,6 @@ class _WelcomePageState extends State<WelcomePage> {
       ..initialize().then((_) {
         _controller.play();
         _controller.setLooping(true);
-        // Ensure the first frame is shown after the video is initialized
         setState(() {});
       });
   }
@@ -52,7 +51,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   alignment: Alignment.topRight,
                   child: fadeIn_fadeOut(
                     image: Container(
-                      margin: const EdgeInsets.only(right: 10),
+                      margin: const EdgeInsets.all(10),
                       child: Image.asset(
                         'images/titre.png',
                         width: 300,

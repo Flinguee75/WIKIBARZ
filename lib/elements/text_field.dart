@@ -25,16 +25,7 @@ class MyTextField extends StatelessWidget {
         hintStyle: const TextStyle(
           color: Colors.grey,
         ),
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-          ),
-        ),
-        enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-          ),
-        ),
+        focusedBorder: const UnderlineInputBorder(),
       ),
     );
   }

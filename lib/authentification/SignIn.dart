@@ -1,13 +1,14 @@
 // ignore_for_file: non_constant_identifier_names, use_build_context_synchronously
 
-import 'dart:ui';
-
 import 'package:conspirapcy/animation/FadeLoop.dart';
 import 'package:conspirapcy/elements/Button.dart';
 import 'package:conspirapcy/elements/text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wave/wave.dart';
+import 'package:wave/config.dart';
 
 // ignore: camel_case_types
 class SignUp extends StatefulWidget {
@@ -50,6 +51,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 30, 51, 88),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white.withOpacity(0),
@@ -68,7 +70,7 @@ class _SignUpState extends State<SignUp> {
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.symmetric(
-            vertical: 60,
+            vertical: 40,
             horizontal: 30,
           ),
           child: Center(
@@ -143,6 +145,31 @@ class _SignUpState extends State<SignUp> {
                   child: FadeTransitionExample(
                     color: const Color.fromARGB(255, 30, 51, 88),
                     image: Image.asset("images/titre2.png"),
+                  ),
+                ),
+                SafeArea(
+                  child: WaveWidget(
+                    config: CustomConfig(
+                      durations: [
+                        5000,
+                        4000,
+                      ],
+                      heightPercentages: [
+                        0.65,
+                        0.66,
+                      ],
+                      gradients: [
+                        [Colors.black, Colors.grey],
+                        [Colors.black, Colors.grey],
+                      ],
+                      gradientBegin: Alignment.centerLeft,
+                      gradientEnd: Alignment.centerRight,
+                      blur: const MaskFilter.blur(
+                        BlurStyle.solid,
+                        40,
+                      ),
+                    ),
+                    size: const Size(double.infinity, double.infinity),
                   ),
                 ),
               ],
