@@ -70,4 +70,6 @@ android {
     defaultConfig{
         minSdkVersion 33
     }
+    ndkVersion "25.1.8937393"
+
 }

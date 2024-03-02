@@ -176,7 +176,7 @@ class _SignUpState extends State<SignUp> {
                     40,
                   ),
                 ),
-                size: const Size(500, 500),
+                size: const Size(50, 50),
               ),
             ),
           ],
